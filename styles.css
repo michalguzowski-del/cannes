@@ -2366,3 +2366,36 @@ section { padding: 120px 0; position: relative; }
   background-size: cover;
   background-position: center;
 }
+
+/* ================================================================
+   CREW SWIPE GRID — desktop grid + mobile horizontal swipe
+   ================================================================ */
+.crew-swipe-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 28px;
+}
+@media (max-width: 1100px) {
+  .crew-swipe-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .crew-swipe-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 20px;
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    scrollbar-width: none;
+  }
+  .crew-swipe-grid::-webkit-scrollbar { display: none; }
+  .crew-swipe-grid .crew-card {
+    flex: 0 0 75vw;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+}
