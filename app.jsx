@@ -1,10 +1,9 @@
 const { useState, useEffect, useRef, useMemo } = React;
 
 function useMobile(bp = 640) {
-  const [ok, setOk] = useState(false);
+  const [ok, setOk] = useState(() => window.innerWidth <= bp);
   useEffect(() => {
     const check = () => setOk(window.innerWidth <= bp);
-    check();
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
   }, [bp]);
