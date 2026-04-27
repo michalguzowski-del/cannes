@@ -383,7 +383,6 @@ function Expect() {
    CREW
    ============================================================ */
 function Crew() {
-  const isMobile = useMobile();
   const cards = CREW.map((p, i) =>
     <div className="crew-card" key={i}>
       <div className="crew-photo" style={{ backgroundImage: `url(${p.img})` }}>
@@ -416,10 +415,7 @@ function Crew() {
             They sail. They trade stories. And occasionally, they talk business.
           </p>
         </div>
-        {isMobile
-          ? <div className="mob-swipe">{cards}</div>
-          : <div className="crew-grid">{cards}</div>
-        }
+        <div className="crew-swipe-grid">{cards}</div>
       </div>
     </section>);
 }
