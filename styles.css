@@ -2320,3 +2320,56 @@ section { padding: 120px 0; position: relative; }
   .follow-btn-primary { padding: 16px 24px 16px 16px; font-size: 13px; }
   .follow-btn-primary .li-circle { width: 30px; height: 30px; }
 }
+}
+
+/* ================================================================
+   MOBILE SWIPE CAROUSELS
+   ================================================================ */
+@media (max-width: 640px) {
+  /* Crew — horizontal swipe */
+  .crew-grid {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 20px;
+    scrollbar-width: none;
+  }
+  .crew-grid::-webkit-scrollbar { display: none; }
+  .crew-grid .crew-card {
+    flex: 0 0 72vw;
+    scroll-snap-align: start;
+  }
+
+  /* Gallery — horizontal swipe (video + photos in one track) */
+  .gallery-wrap {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+    padding-bottom: 20px;
+    margin-top: 40px;
+    align-items: stretch;
+    scrollbar-width: none;
+  }
+  .gallery-wrap::-webkit-scrollbar { display: none; }
+  .g-video-big {
+    flex: 0 0 72vw !important;
+    width: 72vw !important;
+    max-width: none !important;
+    margin: 0 !important;
+    scroll-snap-align: start;
+  }
+  .gallery-side {
+    display: contents;
+  }
+  .gallery-side .g {
+    flex: 0 0 72vw;
+    scroll-snap-align: start;
+    aspect-ratio: 4 / 3;
+    height: auto;
+  }
+}

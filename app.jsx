@@ -379,7 +379,7 @@ function Crew() {
         <div className="crew-header">
           <div>
             <h2 className="section-title">
-              Seven people.<br />
+              Eight people.<br />
               <span className="gold">One horizon.</span>
             </h2>
           </div>
@@ -644,7 +644,7 @@ function Stats() {
         <div className="lbl">markets covered</div>
       </div>
       <div className="stat">
-        <div className="num">3,000<sup>+</sup></div>
+        <div className="num">3,900<sup>+</sup></div>
         <div className="lbl">predefined segments</div>
       </div>
     </div>);
