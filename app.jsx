@@ -226,7 +226,7 @@ function Hero({ variant }) {
           <div className="hero-foot">
             <div className="cell">
               <span className="cell-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.2"><rect x="3" y="5" width="18" height="16" rx="1" /><path d="M3 9h18M8 3v4M16 3v4" /><circle cx="8" cy="14" r="1" fill="currentColor" /><circle cx="12" cy="14" r="1" fill="currentColor" /><circle cx="16" cy="14" r="1" fill="currentColor" /></svg></span>
-              <span className="label">Dates</span><span className="val">Jun 22 — 26</span>
+              <span className="label">Dates</span><span className="val">June 22–24</span>
             </div>
             <div className="cell">
               <span className="cell-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.2"><circle cx="12" cy="12" r="9" /><path d="M12 3v9l5 3" /></svg></span>
