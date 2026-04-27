@@ -200,8 +200,7 @@ function Hero({ variant }) {
               Decision Makers.
             </h1>
             <p className="hero-tag">
-              A curated experience for industry leaders. Premium networking,
-              scenic views, and the kind of conversation that doesn't happen on shore.
+              A curated experience for industry leaders. Premium networking with a panoramic view of Cannes, and the kind of conversation that doesn't happen on shore.
             </p>
             <div style={{ display: "flex", gap: 16, marginTop: 56, flexWrap: "wrap" }}>
               <a href="#register" className="btn" style={{ color: "rgb(255, 255, 255)", fontFamily: "Inter", fontSize: "15px" }}>Register interest <Arrow /></a>
