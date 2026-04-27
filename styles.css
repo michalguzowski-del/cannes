@@ -1028,19 +1028,15 @@ section { padding: 120px 0; position: relative; }
   color: #ffffff;
   background: #0A66C2;
   border-radius: 50%;
-  opacity: 0;
-  transform: translateY(8px) scale(0.9);
-  transition: opacity .35s ease, transform .35s ease, background .2s ease;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: background .2s ease, transform .2s ease;
   text-decoration: none;
   box-shadow: 0 8px 24px -6px rgba(0,0,0,0.5);
 }
-.crew-card:hover .crew-li-hover {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
 .crew-li-hover:hover {
   background: #084e96;
-  transform: translateY(0) scale(1.08) !important;
+  transform: scale(1.08);
 }
 .crew-name {
   font-family: var(--display);
