@@ -383,23 +383,17 @@ function Expect() {
    CREW
    ============================================================ */
 function Crew() {
-  const cards = CREW.map((p, i) =>
-    <div className="crew-card" key={i}>
-      <div className="crew-photo" style={{ backgroundImage: `url(${p.img})` }}>
-        {p.linkedin &&
-          <a className="crew-li-hover" href={p.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn — ${p.name}`}>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 11.02-4.12 2.06 2.06 0 01-.02 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .78 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .78 23.21 0 22.23 0z" />
-            </svg>
-          </a>
-        }
-      </div>
-      <div className="crew-meta">
-        <div className="crew-name">{p.name}</div>
-        <div className="crew-role">{p.role}</div>
-      </div>
-    </div>
-  );
+  const mob = window.innerWidth <= 640;
+  const wrapStyle = mob ? {
+    display: 'flex', flexWrap: 'nowrap', overflowX: 'auto',
+    scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch',
+    gap: '16px', paddingBottom: '20px',
+    marginLeft: '-24px', marginRight: '-24px',
+    paddingLeft: '24px', paddingRight: '24px',
+    width: 'calc(100% + 48px)', scrollbarWidth: 'none'
+  } : {};
+  const cardStyle = mob ? { flex: '0 0 75vw', flexShrink: 0, scrollSnapAlign: 'start' } : {};
+
   return (
     <section id="crew" className="anchor-offset">
       <div className="wrap">
@@ -415,7 +409,25 @@ function Crew() {
             They sail. They trade stories. And occasionally, they talk business.
           </p>
         </div>
-        <div className="crew-swipe-grid">{cards}</div>
+        <div className="crew-grid" style={wrapStyle}>
+          {CREW.map((p, i) =>
+            <div className="crew-card" key={i} style={cardStyle}>
+              <div className="crew-photo" style={{ backgroundImage: `url(${p.img})` }}>
+                {p.linkedin &&
+                  <a className="crew-li-hover" href={p.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn — ${p.name}`}>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 11.02-4.12 2.06 2.06 0 01-.02 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .78 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .78 23.21 0 22.23 0z" />
+                    </svg>
+                  </a>
+                }
+              </div>
+              <div className="crew-meta">
+                <div className="crew-name">{p.name}</div>
+                <div className="crew-role">{p.role}</div>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </section>);
 }
